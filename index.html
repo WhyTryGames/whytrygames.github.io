@@ -26,17 +26,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 5%; /* Reduced padding */
+            padding: 5px 5%; /* Further reduced padding */
             background: #1f1f1f;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            height: 60px; /* Set fixed height */
         }
 
         .logo-container img {
-            max-width: 120px; /* Reduced logo size */
+            max-width: 100px; /* Further reduced logo size */
             transition: transform 0.3s ease, filter 0.3s ease;
         }
 
@@ -48,14 +49,14 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 15px; /* Reduced gap */
+            gap: 10px; /* Reduced gap */
         }
 
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 0.9rem; /* Slightly smaller font size */
-            padding: 8px 15px; /* Reduced padding */
+            font-size: 0.9rem; 
+            padding: 5px 10px; /* Further reduced padding */
             border-radius: 20px;
             background: #282828;
             transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -69,17 +70,34 @@
 
         /* Main Content */
         .main-content {
-            padding: 120px 10% 50px; /* Reduced top padding */
+            padding: 80px 10% 50px; /* Reduced top padding */
+        }
+
+        .games            padding: 5px 10px; /* Further reduced padding */
+            border-radius: 15px;
+            background: #282828;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #3a3a3a;
+            transform: scale(1.05); /* Slightly reduced hover scale */
+            box-shadow: 0 0 10px 3px rgba(0, 188, 212, 0.6);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 10% 50px; /* Reduced top padding to accommodate smaller header */
         }
 
         .games-showcase {
-            margin-bottom: 40px; /* Reduced margin */
+            margin-bottom: 40px; 
             text-align: center;
         }
 
         .games-showcase h2 {
-            font-size: 2.5rem; /* Reduced font size */
-            margin-bottom: 40px; /* Reduced margin */
+            font-size: 2.5rem; 
+            margin-bottom: 40px; 
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #00bcd4;
@@ -91,19 +109,19 @@
         .games-showcase h2:before {
             content: '';
             position: absolute;
-            width: 80%;
-            height: 3px; /* Reduced height */
+            width: 70%;
+            height: 3px; 
             background: #00bcd4;
             bottom: 0;
-            left: 10%;
+            left: 15%;
             border-radius: 50px;
         }
 
         .popular-games {
             display: flex;
-            gap: 15px; /* Reduced gap */
+            gap: 15px; 
             justify-content: center;
-            margin-bottom: 50px; /* Reduced margin */
+            margin-bottom: 50px; 
         }
 
         .game-card-large {
@@ -112,7 +130,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 550px; /* Reduced width */
+            max-width: 500px; /* Reduced max width */
             flex: 1;
             position: relative;
         }
@@ -124,14 +142,14 @@
         }
 
         .game-card-large h3 {
-            font-size: 1.8rem; /* Reduced font size */
+            font-size: 1.8rem; 
             margin: 15px 20px;
             color: #00bcd4;
         }
 
         .game-card-large:hover {
             transform: translateY(-10px);
-            box-shadow: 0 0 30px 10px rgba(0, 188, 212, 0.9);
+            box-shadow: 0 0 25px 8px rgba(0, 188, 212, 0.9);
         }
 
         .coming-soon {
@@ -140,7 +158,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(0, 188, 212, 0.9);
-            padding: 10px 20px; /* Reduced padding */
+            padding: 10px 20px; 
             border-radius: 25px;
             color: #fff;
             font-weight: bold;
@@ -151,8 +169,8 @@
 
         .other-games {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted column size */
-            gap: 15px; /* Reduced gap */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
         }
 
         .game-card {
@@ -166,13 +184,13 @@
 
         .game-card img {
             width: 100%;
-            height: 140px; /* Reduced height */
+            height: 140px; 
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         .game-card h3 {
-            font-size: 1.3rem; /* Reduced font size */
+            font-size: 1.3rem; 
             margin: 15px;
             color: #00bcd4;
         }
@@ -186,14 +204,14 @@
         footer {
             background: #1c1c1c;
             color: #cfd8dc;
-            padding: 15px; /* Reduced padding */
+            padding: 15px; 
             text-align: center;
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.7);
         }
 
         footer p {
             margin-bottom: 10px;
-            font-size: 0.8rem; /* Reduced font size */
+            font-size: 0.8rem; 
         }
 
         .social-media {
@@ -225,15 +243,15 @@
             }
 
             .games-showcase h2 {
-                font-size: 2rem; /* Adjusted font size for mobile */
+                font-size: 2rem; 
             }
 
             .game-card-large h3 {
-                font-size: 1.5rem; /* Adjusted font size for mobile */
+                font-size: 1.5rem; 
             }
 
             .game-card h3 {
-                font-size: 1.2rem; /* Adjusted font size for mobile */
+                font-size: 1.2rem; 
             }
         }
     </style>
@@ -315,3 +333,4 @@
 </body>
 
 </html>
+
