@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhyTry Games</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #1f1f1f;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo-container img {
+            max-width: 150px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: #282828;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #3a3a3a;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px 5px rgba(0, 188, 212, 0.6);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 150px 10% 50px;
+        }
+
+        .games-showcase {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .games-showcase h2 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00bcd4;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .games-showcase h2:before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 4px;
+            background: #00bcd4;
+            bottom: 0;
+            left: 10%;
+            border-radius: 50px;
+        }
+
+        .popular-games {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .game-card-large {
+            background: #222;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 600px;
+            flex: 1;
+            position: relative;
+        }
+
+        .game-card-large img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card-large h3 {
+            font-size: 2rem;
+            margin: 15px 20px;
+            color: #00bcd4;
+        }
+
+        .game-card-large:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px 10px rgba(0, 188, 212, 0.9);
+        }
+
+        .coming-soon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 188, 212, 0.9);
+            padding: 15px 30px;
+            border-radius: 25px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .other-games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #333;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            margin: 15px;
+            color: #00bcd4;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px 10px rgba(0, 188, 212, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: #1c1c1c;
+            color: #cfd8dc;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #00bcd4;
+            transform: scale(1.2);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .popular-games {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-card-large {
+                max-width: 100%;
+            }
+
+            .games-showcase h2 {
+                font-size: 2.5rem;
+            }
+
+            .game-card-large h3 {
+                font-size: 1.8rem;
+            }
+
+            .game-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="whytry.jpg" alt="WhyTry Games Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="games-showcase">
+            <h2>Popular Games</h2>
+            <div class="popular-games">
+                <div class="game-card-large">
+                    <img src="https://via.placeholder.com/600x300" alt="Popular Game 1">
+                    <h3>Popular Game 1</h3>
+                </div>
+                <div class="game-card-large">
+                    <img src="https://via.placeholder.com/600x300" alt="Coming Soon">
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-showcase">
+            <h2>Other Games</h2>
+            <div class="other-games">
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Game 3">
+                    <h3>Game 3</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Game 4">
+                    <h3>Game 4</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Game 5">
+                    <h3>Game 5</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Game 6">
+                    <h3>Game 6</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Game 7">
+                    <h3>Game 7</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Game 8">
+                    <h3>Game 8</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WhyTry Games. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#">TikTok</a>
+        </div>
+    </footer>
+</body>
+
+</html>
