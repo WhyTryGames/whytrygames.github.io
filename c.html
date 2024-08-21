@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four - Play Online</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2YMZ6EXJM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Z2YMZ6EXJM');
+    </script>
+    <meta name="description" content="Play Connect Four online with a friend or against AI.">
+    <meta name="keywords" content="Connect Four, Online Game, Play Connect 4, AI Difficulty, Play with a Friend, Board Game">
+    <meta name="author" content="Jeremy">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Initial Game Mode Selection Modal -->
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <h2>Select Game Mode</h2>
+            <button id="select-friend" class="mode-button">Play with a Friend</button>
+            <div id="ai-difficulty">
+                <h2>Select AI Difficulty</h2>
+                <button class="difficulty-button" data-difficulty="easy">Easy</button>
+                <button class="difficulty-button" data-difficulty="medium">Medium</button>
+                <button class="difficulty-button" data-difficulty="hard">Hard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="game-container" class="game-container hidden">
+        <header>
+            <h1>Connect Four</h1>
+            <p>Challenge a friend or test your skills against our AI!</p>
+        </header>
+
+        <div id="game-board"></div>
+        <div class="controls">
+            <p id="refresh-message">Refresh the page to play again.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
