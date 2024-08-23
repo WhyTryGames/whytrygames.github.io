@@ -123,6 +123,13 @@
             border-radius: 50px;
         }
 
+        .popular-games-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -130,7 +137,24 @@
             justify-content: center;
         }
 
-        .game-card-large,
+        .game-card-large {
+            background: linear-gradient(135deg, #1f2833, #0b0c10);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            cursor: pointer;
+            width: 550px; /* Slightly narrower */
+            height: 300px;
+        }
+
+        .game-card-large img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
         .game-card {
             background: linear-gradient(135deg, #1f2833, #0b0c10);
             border-radius: 20px;
@@ -139,17 +163,13 @@
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             position: relative;
             cursor: pointer;
-        }
-
-        .game-card-large img {
-            width: 600px;
-            height: 300px;
-            transition: transform 0.5s ease;
+            width: 300px;
+            height: 150px;
         }
 
         .game-card img {
-            width: 300px;
-            height: 150px;
+            width: 100%;
+            height: 100%;
             transition: transform 0.5s ease;
         }
 
@@ -159,6 +179,10 @@
             margin: 20px 15px;
             color: #38ef7d;
             text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
         .game-card-large:hover,
@@ -221,6 +245,11 @@
 
         /* Responsiveness */
         @media (max-width: 768px) {
+            .popular-games-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .games-grid {
                 grid-template-columns: 1fr;
             }
@@ -229,16 +258,13 @@
                 font-size: 2.5rem;
             }
 
-            .game-card-large h3,
-            .game-card h3 {
-                font-size: 1.7rem;
-            }
-
+            .game-card-large,
             .game-card-large img {
                 width: 100%;
                 height: auto;
             }
 
+            .game-card,
             .game-card img {
                 width: 100%;
                 height: auto;
@@ -265,7 +291,7 @@
     <main class="main-content">
         <section class="games-showcase">
             <h2>Popular Games</h2>
-            <div class="games-grid">
+            <div class="popular-games-grid">
                 <a href="c4.html" class="game-link">
                     <div class="game-card-large">
                         <img src="New Project (11).jpg" alt="Connect 4">
@@ -278,6 +304,12 @@
                         <h3>Infinite Stack</h3>
                     </div>
                 </a>
+                <a href="maze.html" class="game-link">
+                    <div class="game-card-large">
+                        <img src="maze.jpg" alt="Maze Runner">
+                        <h3>Maze Runner</h3>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -287,7 +319,7 @@
                 <a href="bf.html" class="game-link">
                     <div class="game-card">
                         <img src="bf.png" alt="Bear Fill">
-                        <h3>Beer Fill</h3>
+                        <h3>Bear Fill</h3>
                     </div>
                 </a>
                 <a href="tlw.html" class="game-link">
@@ -323,10 +355,9 @@
     <footer>
         <p>&copy; 2024 WhyTry Games. All Rights Reserved.</p>
         <div class="social-media">
-            <a href="#">TikTok</a>
+            <a href="https://www.tiktok.com/@whytrygames">TikTok</a>
         </div>
     </footer>
 </body>
 
 </html>
-
