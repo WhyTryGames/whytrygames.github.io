@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+  background: linear-gradient(135deg, #1f2833, #0b0c10); /* Matching the WhyTry theme gradient */
   margin: 0;
   padding: 0;
   display: flex;
@@ -31,6 +31,7 @@ body {
   justify-content: flex-start;
 }
 
+/* Rest of your original CSS remains unchanged */
 
 #tap {
   width: 100px;
