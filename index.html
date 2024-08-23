@@ -24,7 +24,7 @@
         }
 
         body {
-            background: #0d0d0d;
+            background: #0b0c10;
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
@@ -35,129 +35,141 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 10%;
-            background: linear-gradient(90deg, #0abcf9, #2cdb7a);
+            padding: 15px 10%;
+            background: linear-gradient(90deg, #11998e, #38ef7d);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
-            height: 70px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            height: 80px;
             transition: background 0.3s ease;
         }
 
         .logo-container img {
-            max-width: 130px;
-            transition: filter 0.3s ease;
+            max-width: 160px;
+            transition: transform 0.3s ease;
         }
 
         .logo-container img:hover {
-            filter: brightness(1.1);
+            transform: scale(1.05);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
-            font-size: 1rem;
-            padding: 8px 18px;
-            border-radius: 25px;
-            background: rgba(0, 0, 0, 0.3);
-            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background: #2cdb7a;
-            transform: scale(1.05);
+            background: rgba(56, 239, 125, 0.8);
+            color: #000000;
+            transform: scale(1.1);
         }
 
         /* Main Content */
         .main-content {
-            padding: 100px 10%;
-            background: linear-gradient(180deg, #121212, #0abcf9);
+            padding: 120px 10%;
+            background: linear-gradient(180deg, #0b0c10, #1f2833);
+            min-height: 100vh;
         }
 
         .games-showcase {
-            margin-bottom: 60px;
+            margin-bottom: 70px;
             text-align: center;
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.8s ease-in-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
         .games-showcase h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #0abcf9;
+            letter-spacing: 3px;
+            color: #38ef7d;
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
 
         .games-showcase h2:before {
             content: '';
             position: absolute;
-            width: 70%;
-            height: 2px;
-            background: #2cdb7a;
+            width: 80%;
+            height: 4px;
+            background: #11998e;
             bottom: 0;
-            left: 15%;
+            left: 10%;
             border-radius: 50px;
         }
 
-        .popular-games,
-        .other-games {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 20px;
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
             justify-content: center;
         }
 
         .game-card-large,
         .game-card {
-            background: #1a1a1a;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #1f2833, #0b0c10);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
             position: relative;
             cursor: pointer;
         }
 
-        .game-card-large img,
+        .game-card-large img {
+            width: 600px;
+            height: 300px;
+            transition: transform 0.5s ease;
+        }
+
         .game-card img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
+            width: 300px;
+            height: 150px;
+            transition: transform 0.5s ease;
         }
 
         .game-card-large h3,
         .game-card h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin: 20px 15px;
-            color: #2cdb7a;
+            color: #38ef7d;
             text-align: center;
         }
 
         .game-card-large:hover,
         .game-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(42, 235, 122, 0.4);
+            transform: scale(1.08);
+            box-shadow: 0 16px 50px rgba(56, 239, 125, 0.5);
+        }
+
+        .game-card-large:hover img,
+        .game-card:hover img {
+            transform: scale(1.1);
         }
 
         .coming-soon {
@@ -165,66 +177,71 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(42, 235, 122, 0.9);
-            padding: 10px 20px;
-            border-radius: 25px;
-            color: #ffffff;
+            background: rgba(56, 239, 125, 0.95);
+            padding: 15px 40px;
+            border-radius: 30px;
+            color: #000000;
             font-weight: bold;
             text-transform: uppercase;
-            opacity: 1;
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
         /* Footer */
         footer {
-            background: #0d0d0d;
-            color: #0abcf9;
-            padding: 15px;
+            background: #000000;
+            color: #38ef7d;
+            padding: 25px;
             text-align: center;
-            box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.9);
+            margin-top: 50px;
         }
 
         footer p {
-            margin-bottom: 10px;
-            font-size: 1rem;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
 
         .social-media {
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .social-media a {
-            color: #0abcf9;
-            margin: 0 10px;
+            color: #38ef7d;
+            margin: 0 15px;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-media a:hover {
-            color: #2cdb7a;
-            transform: scale(1.05);
+            color: #11998e;
+            transform: scale(1.2);
         }
 
         /* Responsiveness */
         @media (max-width: 768px) {
-            .popular-games,
-            .other-games {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .game-card-large,
-            .game-card {
-                max-width: 100%;
+            .games-grid {
+                grid-template-columns: 1fr;
             }
 
             .games-showcase h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .game-card-large h3,
             .game-card h3 {
-                font-size: 1.6rem;
+                font-size: 1.7rem;
+            }
+
+            .game-card-large img {
+                width: 100%;
+                height: auto;
+            }
+
+            .game-card img {
+                width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -248,7 +265,7 @@
     <main class="main-content">
         <section class="games-showcase">
             <h2>Popular Games</h2>
-            <div class="popular-games">
+            <div class="games-grid">
                 <a href="c4.html" class="game-link">
                     <div class="game-card-large">
                         <img src="New Project (11).jpg" alt="Connect 4">
@@ -266,11 +283,11 @@
 
         <section class="games-showcase">
             <h2>Other Games</h2>
-            <div class="other-games">
+            <div class="games-grid">
                 <a href="bf.html" class="game-link">
                     <div class="game-card">
                         <img src="bf.png" alt="Bear Fill">
-                        <h3>Bear Fill</h3>
+                        <h3>Beer Fill</h3>
                     </div>
                 </a>
                 <a href="tlw.html" class="game-link">
@@ -312,3 +329,4 @@
 </body>
 
 </html>
+
