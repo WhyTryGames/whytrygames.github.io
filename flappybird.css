@@ -1,0 +1,16 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: linear-gradient(90deg, #1f2833, #0b0c10); /* Gradient background */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Ensure no scrollbars appear */
+}
+
+#board {
+    background-image: url("flappybirdbg.png");
+    background-size: cover; /* Ensure the background image covers the canvas */
+    margin-top: 120px; /* Adjust as needed */
+    /* Optional positioning */
+    /* position: relative; */
+    /* top: 50px; */
+}
