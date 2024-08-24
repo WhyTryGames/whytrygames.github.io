@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flappy Bird</title>
     <link rel="stylesheet" href="flappybird.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <script src="flappybird.js"></script>
 </head>
+
 <body>
     <div id="game-container">
         <!-- Score -->
@@ -25,4 +38,5 @@
         <div id="gameOver">GAME OVER</div>
     </div>
 </body>
+
 </html>
