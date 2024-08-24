@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="wt.png" type="image/png">
+    <title>Snake Game</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2YMZ6EXJM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z2YMZ6EXJM');
+    </script>
+    <link rel="stylesheet" href="snake.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <section class="game-section">
+            <h2>Snake Game</h2>
+            <div class="game-container">
+                <canvas id="gameCanvas" width="500" height="500"></canvas>
+                <div class="score-container">
+                    <p>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="startButton">Start Game</button>
+                <button id="restartButton" style="display: none;">Restart Game</button>
+            </div>
+            <p class="instructions">Use Arrow Keys or WASD to Play</p>
+        </section>
+    </main>
+
+    <script src="snake.js"></script>
+</body>
+
+</html>
