@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - WhyTry Games</title>
+    <!-- Favicon -->
+    <link rel="icon" href="wt.png" type="image/png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2YMZ6EXJM"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', 'G-Z2YMZ6EXJM');
+        gtag('config', 'G-Z2YMZ6EXJM', {
+            'page_title': 'About Us - WhyTry Games',
+            'page_path': '/aboutus.html'
+        });
     </script>
     <style>
         /* Global Reset */
@@ -229,7 +233,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="wt (1).png" alt="WhyTry Games Logo" class="logo">
+            <img src="wt.png" alt="WhyTry Games Logo" class="logo">
         </div>
         <nav>
             <ul>
@@ -251,7 +255,7 @@
             <h2>Meet the Team</h2>
             <div class="team">
                 <div class="team-member">
-                    <img src="whytry.jpg" alt="Team Member 2">
+                    <img src="wt.png" alt="Team Member 2">
                     <h3>WhyTryGames</h3>
                     <p>Main Developer</p>
                 </div>
@@ -268,4 +272,3 @@
 </body>
 
 </html>
-
