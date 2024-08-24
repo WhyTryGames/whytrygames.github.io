@@ -212,6 +212,99 @@
             opacity: 0.9;
         }
 
+        /* Pop-up Modal */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInPopup 0.5s ease forwards;
+        }
+
+        #popup .popup-content {
+            background: #38ef7d;
+            color: #0b0c10;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
+            max-width: 500px;
+            width: 90%;
+            animation: scaleIn 0.5s ease forwards;
+        }
+
+        #popup .popup-content h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            animation: slideIn 0.4s ease forwards;
+        }
+
+        #popup .popup-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            animation: slideIn 0.4s ease forwards;
+        }
+
+        #popup .popup-content button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background: #0b0c10;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            animation: fadeInButton 0.5s ease forwards;
+        }
+
+        #popup .popup-content button:hover {
+            background: #000000;
+        }
+
+        @keyframes fadeInPopup {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.7);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButton {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         /* Footer */
         footer {
             background: #000000;
@@ -288,6 +381,15 @@
         </nav>
     </header>
 
+    <!-- Pop-up Modal -->
+    <div id="popup">
+        <div class="popup-content">
+            <h2>🎉 Big Announcement! 🎉</h2>
+            <p>We’re getting ready to drop some amazing updates once we hit 1,000 users! Stay tuned for brand-new features, exciting games, and exclusive content just for you. Share this website with your friends and thanks for being part of the WhyTry Games community!</p>
+            <button id="close-popup">Awesome, can’t wait!</button>
+        </div>
+    </div>
+
     <main class="main-content">
         <section class="games-showcase">
             <h2>Popular Games</h2>
@@ -360,6 +462,22 @@
             <a href="https://www.tiktok.com/@whytrygames">TikTok</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('popup');
+            const closeBtn = document.getElementById('close-popup');
+
+            if (!localStorage.getItem('popupShown')) {
+                popup.style.display = 'flex';
+                localStorage.setItem('popupShown', 'true');
+            }
+
+            closeBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>
