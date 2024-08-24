@@ -11,11 +11,30 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #f8f994;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #0b0c10, #1f2833); /* Gradient from dark to slightly lighter color */
 }
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add some padding for spacing */
+}
+
+.game {
+  width: 540px;
+  height: 650px;
+  border-radius: 9px;
+  background-color: #333;
+  padding: 5px;
+}
+
 
 h1, h2 {
     font-family: 'Roboto', sans-serif;
