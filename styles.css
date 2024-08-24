@@ -6,21 +6,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body, html {
+body {
     background: linear-gradient(90deg, #11998e, #38ef7d); /* Full-page gradient background */
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 /* Header */
@@ -93,7 +87,9 @@ h2 {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: transparent; /* Make container transparent to show full-page gradient */
+    background: linear-gradient(90deg, #11998e, #38ef7d); /* Ensure the game container also has a gradient background */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
     width: calc(100% - 40px);
     max-width: 900px;
     margin: 0 auto;
