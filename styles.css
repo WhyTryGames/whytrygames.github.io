@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, #11998e, #38ef7d); /* Full-page gradient background */
+    background: linear-gradient(180deg, #1f2833, #0b0c10);
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
@@ -16,6 +16,7 @@ body {
     align-items: center;
     height: 100vh;
 }
+
 
 /* Header */
 header {
