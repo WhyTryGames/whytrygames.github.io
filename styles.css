@@ -7,10 +7,14 @@
 }
 
 body {
-    background: #0b0c10;
+    background: linear-gradient(90deg, #11998e, #38ef7d); /* Full-page gradient background */
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Header */
@@ -83,7 +87,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(180deg, #0b0c10, #1f2833);
+    background: linear-gradient(180deg, #0b0c10, #1f2833); /* Internal container gradient */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
     width: calc(100% - 40px);
