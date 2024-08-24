@@ -1,1 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - WhyTry Games</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2YMZ6EXJM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z2YMZ6EXJM');
+    </script>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0b0c10;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            background: linear-gradient(90deg, #11998e, #38ef7d);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            height: 80px;
+            transition: background 0.3s ease;
+        }
+
+        .logo-container img {
+            max-width: 160px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: rgba(56, 239, 125, 0.8);
+            color: #000000;
+            transform: scale(1.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 120px 10%;
+            background: linear-gradient(180deg, #0b0c10, #1f2833);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #38ef7d;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #c5c6c7;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* Send Message Button */
+        .send-message {
+            background: linear-gradient(90deg, #11998e, #38ef7d);
+            color: #ffffff;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .send-message:hover {
+            background: #38ef7d;
+            transform: scale(1.1);
+            color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #38ef7d;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.9);
+            margin-top: 50px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .social-media {
+            margin-top: 15px;
+        }
+
+        .social-media a {
+            color: #38ef7d;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #11998e;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="wt (1).png" alt="WhyTry Games Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="whytrygames.github.io">Home</a></li>
+                <li><a href="whytrygames.github.io/aboutus.html">About Us</a></li>
+                <li><a href="whytrygames.github.io/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you! Click the button below to reach our contact form and let us know your thoughts, questions, or feedback.</p>
+        <a href="https://forms.gle/4LsmcPRpL6yu1Nyb8" class="send-message">Send Message</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WhyTry Games. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://www.tiktok.com/@whytrygames">TikTok</a>
+        </div>
+    </footer>
+</body>
+
+</html>
 
