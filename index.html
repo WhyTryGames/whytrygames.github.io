@@ -65,20 +65,21 @@
         .logo-container img:hover {
             transform: scale(1.05);
         }
+
         .site-name {
     flex-grow: 1;
     text-align: center;
-    color: #ffffff;
+    color: transparent;
     font-size: 2.5rem;
     font-weight: bold;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
     letter-spacing: 2px;
     text-transform: uppercase;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    -webkit-text-stroke: 1px #000000; /* Thinner white outline */
+    /* -webkit-text-stroke: 1px #000000; */ /* Alternative: Black outline */
 }
-
 
 
 
@@ -291,7 +292,9 @@
             justify-content: center;
             align-items: center;
             animation: fadeInPopup 0.5s ease forwards;
-        }        #popup .popup-content {
+        }
+
+        #popup .popup-content {
             background: #38ef7d;
             color: #0b0c10;
             padding: 30px;
@@ -356,7 +359,7 @@
             }
             to {
                 transform: translateY(0);
-                opacity: 1;
+                opacity: 1);
             }
         }
 
@@ -571,5 +574,3 @@
 </body>
 
 </html>
-
-
