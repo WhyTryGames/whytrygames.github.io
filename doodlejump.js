@@ -33,10 +33,13 @@ let platformHeight = 18;
 let platformImg;
 
 let score = 0;
-let maxScore = 0;
+let highScore = localStorage.getItem('highScore') || 0; //retrieve the high score from local storage
 let gameOver = false;
 
 window.onload = function () {
+    // Hide the game container until fully loaded
+    document.getElementById('game-container').style.visibility = 'hidden';
+
     board = document.getElementById("board");
     board.height = boardHeight;
     board.width = boardWidth;
@@ -48,6 +51,8 @@ window.onload = function () {
     doodler.img = doodlerRightImg;
     doodlerRightImg.onload = function () {
         context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
+        // Once the image is loaded, make the game container visible
+        document.getElementById('game-container').style.visibility = 'visible';
     };
 
     doodlerLeftImg = new Image();
@@ -60,6 +65,9 @@ window.onload = function () {
     placePlatforms();
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveDoodler);
+
+    // Set initial high score text
+    document.getElementById('highScore').innerText = `High Score: ${highScore}`;
 };
 
 function update() {
@@ -69,12 +77,11 @@ function update() {
     }
     context.clearRect(0, 0, board.width, board.height);
 
-    //doodler
+    //doodler movement
     doodler.x += velocityX;
     if (doodler.x > boardWidth) {
         doodler.x = 0;
-    }
-    else if (doodler.x + doodler.width < 0) {
+    } else if (doodler.x + doodler.width < 0) {
         doodler.x = boardWidth;
     }
 
@@ -82,6 +89,14 @@ function update() {
     doodler.y += velocityY;
     if (doodler.y > board.height) {
         gameOver = true;
+
+        // Check and update high score
+        if (score > highScore) {
+            highScore = score;
+            localStorage.setItem('highScore', highScore);
+            document.getElementById('highScore').innerText = `High Score: ${highScore}`;
+        }
+        document.getElementById('gameOver').style.display = 'block';
     }
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 
@@ -93,6 +108,7 @@ function update() {
         }
         if (detectCollision(doodler, platform) && velocityY >= 0) {
             velocityY = initialVelocityY; //jump
+            score += 1; // Increase score by 1 for each successful jump
         }
         context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
     }
@@ -103,32 +119,18 @@ function update() {
         newPlatform(); //replace with new platform on top
     }
 
-    //score
-    updateScore();
-    context.fillStyle = "#c13434";
-    context.font = "20px Poppins, sans-serif";
-    context.fillText("Score: " + score, 10, 30);
-
-    if (gameOver) {
-        context.fillStyle = "#c13434";
-        context.font = "bold 18px Poppins, sans-serif"; // Further reduced font size
-        context.shadowColor = "rgba(0, 0, 0, 0.5)";
-        context.shadowBlur = 4;
-        context.textAlign = "center"; // Center text alignment
-        context.fillText("Game Over: Press 'Space' to Restart", boardWidth / 2, boardHeight * 7.5 / 8); // Adjusted vertical position
-    }
+    // Update and display score
+    document.getElementById('score').innerText = `Score: ${score}`;
 }
 
 function moveDoodler(e) {
     if (e.code == "ArrowRight" || e.code == "KeyD") { //move right
         velocityX = 4;
         doodler.img = doodlerRightImg;
-    }
-    else if (e.code == "ArrowLeft" || e.code == "KeyA") { //move left
+    } else if (e.code == "ArrowLeft" || e.code == "KeyA") { //move left
         velocityX = -4;
         doodler.img = doodlerLeftImg;
-    }
-    else if (e.code == "Space" && gameOver) {
+    } else if (e.code == "Space" && gameOver) {
         //reset
         doodler = {
             img: doodlerRightImg,
@@ -141,9 +143,9 @@ function moveDoodler(e) {
         velocityX = 0;
         velocityY = initialVelocityY;
         score = 0;
-        maxScore = 0;
         gameOver = false;
         placePlatforms();
+        document.getElementById('gameOver').style.display = 'none';
     }
 }
 
@@ -193,17 +195,4 @@ function detectCollision(a, b) {
         a.x + a.width > b.x && //a's top right corner passes b's top left corner
         a.y < b.y + b.height && //a's top left corner doesn't reach b's bottom left corner
         a.y + a.height > b.y; //a's bottom left corner passes b's top left corner
-}
-
-function updateScore() {
-    let points = Math.floor(50 * Math.random()); //(0-1) *50 --> (0-50)
-    if (velocityY < 0) { //negative going up
-        maxScore += points;
-        if (score < maxScore) {
-            score = maxScore;
-        }
-    }
-    else if (velocityY >= 0) {
-        maxScore -= points;
-    }
 }
