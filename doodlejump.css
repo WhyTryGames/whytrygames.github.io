@@ -14,15 +14,6 @@ body {
     margin: 0;
 }
 
-header {
-    padding: 10px;
-    background: linear-gradient(90deg, #11998e, #38ef7d);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-}
 
 .logo-container img {
     max-width: 120px;
