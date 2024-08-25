@@ -12,7 +12,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-Z2YMZ6EXJM');
     </script>
     <style>
@@ -24,16 +23,40 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        body {
-            background: #0b0c10;
+        html, body {
+            height: 100%;
+            background-color: #0b0c10;
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            padding-left: 10px;
-            padding-right: 10px;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
         }
 
         /* Header */
@@ -67,53 +90,136 @@
         }
 
         .site-name {
-    flex-grow: 1;
-    text-align: center;
-    color: transparent;
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-text-stroke: 1px #000000; /* Thinner white outline */
-    /* -webkit-text-stroke: 1px #000000; */ /* Alternative: Black outline */
-}
-
-
-
-        @keyframes fadeInName {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            flex-grow: 1;
+            text-align: center;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-text-stroke: 1px #ffffff; /* Thinner white outline */
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
+        }
+
+        nav ul li {
+            list-style: none;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
             font-size: 1.2rem;
-            padding: 10px 20px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            padding: 10px 30px;
+            border-radius: 20px;
+            border: 1px solid #ffffff; /* Thin white outline */
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background: rgba(56, 239, 125, 0.8);
-            color: #000000;
+            background-color: #38ef7d;
+            color: #0b0c10;
+        }
+
+        /* Search Bar with Reset Button */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 100px auto 20px auto;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .search-container input[type="text"] {
+            width: 60%;
+            padding: 15px;
+            border-radius: 25px;
+            border: 1px solid #ffffff; /* Thin white outline */
+            background: #1f2833;
+            color: #ffffff;
+            font-size: 1.2rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #11998e;
+            box-shadow: 0 0 10px #11998e;
+        }
+
+        .search-container button {
+            padding: 15px 25px;
+            margin-left: 10px;
+            border-radius: 25px;
+            border: 1px solid #ffffff; /* Thin white outline */
+            background: #38ef7d;
+            color: #0b0c10;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background: #11998e;
+            color: #ffffff;
+        }
+
+        .reset-button {
+            padding: 15px 25px;
+            margin-right: 10px;
+            border-radius: 25px;
+            border: 1px solid #ffffff; /* Thin white outline */
+            background: #f44336;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .reset-button:hover {
+            background: #d32f2f;
+        }
+
+        /* Mini-Game Container */
+        .minigame-container {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .minigame-card {
+            background: #1f2833;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .minigame-card:hover {
             transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(56, 239, 125, 0.5);
+        }
+
+        .minigame-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .minigame-card h4 {
+            margin-top: 10px;
+            color: #38ef7d;
         }
 
         /* Main Content */
@@ -279,99 +385,6 @@
             background-position: center;
         }
 
-        /* Pop-up Modal */
-        #popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            animation: fadeInPopup 0.5s ease forwards;
-        }
-
-        #popup .popup-content {
-            background: #38ef7d;
-            color: #0b0c10;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
-            max-width: 500px;
-            width: 90%;
-            animation: scaleIn 0.5s ease forwards;
-        }
-
-        #popup .popup-content h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            animation: slideIn 0.4s ease forwards;
-        }
-
-        #popup .popup-content p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            animation: slideIn 0.4s ease forwards;
-        }
-
-        #popup .popup-content button {
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            color: #ffffff;
-            background: #0b0c10;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            animation: fadeInButton 0.5s ease forwards;
-        }
-
-        #popup .popup-content button:hover {
-            background: #000000;
-        }
-
-        @keyframes fadeInPopup {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0.7);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1);
-            }
-        }
-
-        @keyframes fadeInButton {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
         /* Footer */
         footer {
             background: #000000;
@@ -439,115 +452,115 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/aboutus.html">About Us</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Pop-up Modal -->
-    <div id="popup">
-        <div class="popup-content">
-            <h2>🎉 Big Announcement! 🎉</h2>
-            <p>We’re getting ready to drop some amazing updates once we hit 1,000 users! Stay tuned for brand-new features, exciting games, and exclusive content just for you. Share this website with your friends and thanks for being part of the WhyTry Games community!</p>
-            <button id="close-popup">Awesome, can’t wait!</button>
-        </div>
+    <div class="search-container">
+        <button class="reset-button" onclick="resetSearch()">Reset</button>
+        <input type="text" id="searchInput" placeholder="Search games...">
+        <button onclick="searchGames()">Search</button>
     </div>
 
-<main class="main-content">
-    <section class="games-section">
-        <h2>Popular Games</h2>
-        <div class="games-grid">
-            <a href="pacman.html" class="game-link">
-                <div class="game-card-large">
-                    <img src="pacman.png" alt="PacMan">
-                    <h3>Pac-Man</h3>
-                </div>
-            </a>
-            <a href="flappybird.html" class="game-link">
-                <div class="game-card-large">
-                    <img src="fb.webp" alt="Flappy Bird">
-                    <h3>Flappy Bird</h3>
-                </div>
-            </a>
-            <a href="infinitestack.html" class="game-link">
-                <div class="game-card-large">
-                    <img src="Stack.jpg" alt="Stack">
-                    <h3>Infinite Stack</h3>
-                </div>
-            </a>
-        </div>
-    </section>
+    <div class="minigame-container" id="minigameContainer">
+        <!-- Mini-games will be dynamically inserted here -->
+    </div>
 
-    <section class="games-section">
-        <h2>New Games</h2>
-        <div class="games-grid">
-            <a href="wordguess.html" class="game-link">
-                <div class="game-card">
-                    <img src="wordguess.png" alt="Word Guess">
-                    <h3>Word Guess</h3>
-                </div>
-            </a>
-        </div>
-    </section>
+    <main class="main-content">
+        <section class="games-section" id="popularGames">
+            <h2>Popular Games</h2>
+            <div class="games-grid">
+                <a href="pacman.html" class="game-link">
+                    <div class="game-card-large">
+                        <img src="pacman.png" alt="PacMan">
+                        <h3>Pac-Man</h3>
+                    </div>
+                </a>
+                <a href="flappybird.html" class="game-link">
+                    <div class="game-card-large">
+                        <img src="fb.webp" alt="Flappy Bird">
+                        <h3>Flappy Bird</h3>
+                    </div>
+                </a>
+                <a href="infinitestack.html" class="game-link">
+                    <div class="game-card-large">
+                        <img src="Stack.jpg" alt="Stack">
+                        <h3>Infinite Stack</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-    <section class="games-section">
-        <h2>Classic Games</h2>
-        <div class="games-grid">
-            <a href="2048.html" class="game-link">
-                <div class="game-card">
-                    <img src="2048.PNG" alt="2048">
-                    <h3>2048</h3>
-                </div>
-            </a>
-            <a href="doodlejump.html" class="game-link">
-                <div class="game-card">
-                    <img src="dj.png" alt="Doodle Jump">
-                    <h3>Doodle Jump</h3>
-                </div>
-            </a>
-            <a href="snake.html" class="game-link">
-                <div class="game-card">
-                    <img src="snake.png" alt="Snake">
-                    <h3>Snake</h3>
-                </div>
-            </a>
-        </div>
-    </section>
+        <section class="games-section" id="newGames">
+            <h2>New Games</h2>
+            <div class="games-grid">
+                <a href="wordguess.html" class="game-link">
+                    <div class="game-card">
+                        <img src="wordguess.png" alt="Word Guess">
+                        <h3>Word Guess</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-    <section class="games-section">
-        <h2>Strategy Games</h2>
-        <div class="games-grid">
-            <a href="tlw.html" class="game-link">
-                <div class="game-card">
-                    <img src="thelw.png" alt="The Last War">
-                    <h3>The Last War</h3>
-                </div>
-            </a>
-            <a href="c4.html" class="game-link">
-                <div class="game-card">
-                    <img src="New Project (11).jpg" alt="Connect 4">
-                    <h3>Connect 4</h3>
-                </div>
-            </a>
-        </div>
-    </section>
+        <section class="games-section" id="classicGames">
+            <h2>Classic Games</h2>
+            <div class="games-grid">
+                <a href="2048.html" class="game-link">
+                    <div class="game-card">
+                        <img src="2048.PNG" alt="2048">
+                        <h3>2048</h3>
+                    </div>
+                </a>
+                <a href="doodlejump.html" class="game-link">
+                    <div class="game-card">
+                        <img src="dj.png" alt="Doodle Jump">
+                        <h3>Doodle Jump</h3>
+                    </div>
+                </a>
+                <a href="snake.html" class="game-link">
+                    <div class="game-card">
+                        <img src="snake.png" alt="Snake">
+                        <h3>Snake</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-    <section class="games-section">
-        <h2>Other Games</h2>
-        <div class="games-grid">
-            <a href="bf.html" class="game-link">
-                <div class="game-card">
-                    <img src="bff.png" alt="Beer Fill">
-                    <h3>Beer Fill</h3>
-                </div>
-            </a>
-            <!-- Additional games can be added here -->
-        </div>
-    </section>
-</main>
+        <section class="games-section" id="strategyGames">
+            <h2>Strategy Games</h2>
+            <div class="games-grid">
+                <a href="tlw.html" class="game-link">
+                    <div class="game-card">
+                        <img src="thelw.png" alt="The Last War">
+                        <h3>The Last War</h3>
+                    </div>
+                </a>
+                <a href="c4.html" class="game-link">
+                    <div class="game-card">
+                        <img src="New Project (11).jpg" alt="Connect 4">
+                        <h3>Connect 4</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
 
+        <section class="games-section" id="otherGames">
+            <h2>Other Games</h2>
+            <div class="games-grid">
+                <a href="bf.html" class="game-link">
+                    <div class="game-card">
+                        <img src="bff.png" alt="Beer Fill">
+                        <h3>Beer Fill</h3>
+                    </div>
+                </a>
+                <!-- Additional games can be added here -->
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 WhyTry Games. All Rights Reserved.</p>
@@ -557,19 +570,36 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const popup = document.getElementById('popup');
-            const closeBtn = document.getElementById('close-popup');
+        function searchGames() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const gamesSections = document.querySelectorAll('.games-section');
+            let foundGames = false;
 
-            if (!localStorage.getItem('popupShown')) {
-                popup.style.display = 'flex';
-                localStorage.setItem('popupShown', 'true');
-            }
-
-            closeBtn.addEventListener('click', function () {
-                popup.style.display = 'none';
+            gamesSections.forEach(section => {
+                section.style.display = 'none'; // Hide all sections initially
+                const games = section.querySelectorAll('.game-card, .game-card-large');
+                
+                games.forEach(game => {
+                    const gameName = game.querySelector('h3').textContent.toLowerCase();
+                    if (gameName.includes(searchQuery)) {
+                        section.style.display = 'block'; // Show section if a match is found
+                        game.style.display = 'block';
+                        foundGames = true;
+                    } else {
+                        game.style.display = 'none';
+                    }
+                });
             });
-        });
+
+            if (!foundGames) {
+                alert('No games found matching your search.');
+            }
+        }
+
+        function resetSearch() {
+            document.getElementById('searchInput').value = '';
+            location.reload(); // Refresh the page to reset everything
+        }
     </script>
 </body>
 
