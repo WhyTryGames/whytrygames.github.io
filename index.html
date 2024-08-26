@@ -33,7 +33,7 @@
             flex-direction: column;
             margin: 0;
             padding: 0;
-            font-size: 0.875rem; /* Base font size reduced */
+            font-size: 0.875rem;
         }
 
         img {
@@ -81,7 +81,7 @@
         }
 
         .logo-container img {
-            max-width: 6.25rem; /* 100px */
+            max-width: 6.25rem;
             transition: transform 0.3s ease;
         }
 
@@ -184,40 +184,61 @@
             background: #d32f2f;
         }
 
-        /* Mini-Game Container */
-        .minigame-container {
-            display: none;
-            flex-wrap: wrap;
+        /* Centered Popular Games Section */
+        .games-grid.centered {
+            display: flex;
             justify-content: center;
-            margin-top: 1rem;
+            gap: 1.5rem; /* Space between the two game cards */
+            max-width: 100%; /* Full width to allow centering */
+            margin: 0 auto;
         }
 
-        .minigame-card {
-            background: #1f2833;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-            padding: 0.75rem;
-            width: 8.75rem; /* 140px */
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.5); /* 8px 20px */
-        }
-
-        .minigame-card:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0.75rem 1.875rem rgba(56, 239, 125, 0.5); /* 12px 30px */
-        }
-
-        .minigame-card img {
-            width: 100%;
+        .game-card-container {
+            width: 28.125rem; /* 450px for larger size */
             height: auto;
-            border-radius: 0.3125rem; /* 5px */
+            background: linear-gradient(135deg, #1f2833, #0b0c10);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 0.625rem 2rem rgba(0, 0, 0, 0.8);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .minigame-card h4 {
-            margin-top: 0.625rem; /* 10px */
+        .game-card-container img {
+            width: 100%;
+            height: 80%; /* Adjust to maintain aspect ratio */
+            border-bottom: 0.1875rem solid #1f2833;
+        }
+
+        .game-card-container h3 {
+            font-size: 1.5rem; /* Larger text for prominence */
             color: #38ef7d;
+            text-align: center;
+            text-transform: uppercase;
+            background: #1f2833;
+            width: 100%;
+            padding: 0.75rem 0;
+            margin: 0;
+            border-radius: 0 0 1rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .game-link:hover .game-card-container {
+            transform: scale(1.08);
+            box-shadow: 0 1rem 2.5rem rgba(56, 239, 125, 0.5);
+            border: 0.1875rem solid #38ef7d;
+        }
+
+        .game-link:hover .game-card-container img {
+            transform: scale(1.05);
+        }
+
+        .game-link:hover .game-card-container h3 {
+            color: #11998e;
         }
 
         /* Main Content */
@@ -236,7 +257,7 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-1.25rem); /* 20px */
+                transform: translateY(-1.25rem);
             }
             to {
                 opacity: 1;
@@ -262,7 +283,7 @@
             content: '';
             position: absolute;
             width: 70%;
-            height: 0.1875rem; /* 3px */
+            height: 0.1875rem;
             background: #11998e;
             bottom: 0;
             left: 15%;
@@ -272,29 +293,10 @@
         .games-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.9375rem; /* 15px */
+            gap: 0.9375rem;
             justify-content: center;
-            max-width: 68.75rem; /* 1100px */
+            max-width: 68.75rem;
             margin: 0 auto;
-        }
-
-        .game-card-large {
-            background: linear-gradient(135deg, #1f2833, #0b0c10);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 0.625rem 2rem rgba(0, 0, 0, 0.8);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            position: relative;
-            cursor: pointer;
-            width: 28.125rem; /* 450px */
-            height: 14.0625rem; /* 225px */
-            border: 0.1875rem solid transparent;
-        }
-
-        .game-card-large img {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
         }
 
         .game-card {
@@ -316,7 +318,6 @@
             transition: transform 0.5s ease;
         }
 
-        .game-card-large h3,
         .game-card h3 {
             font-size: 1.5rem;
             margin: 1rem 0.75rem;
@@ -328,19 +329,16 @@
             text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.7);
         }
 
-        .game-card-large:hover,
         .game-card:hover {
             transform: scale(1.08);
             box-shadow: 0 1rem 2.5rem rgba(56, 239, 125, 0.5);
             border: 0.1875rem solid #38ef7d;
         }
 
-        .game-card-large:hover img,
         .game-card:hover img {
             transform: scale(1.1);
         }
 
-        .game-card-large:hover::after,
         .game-card:hover::after {
             content: '';
             position: absolute;
@@ -371,12 +369,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(56, 239, 125, 0.95);
-            padding: 0.75rem 2rem; /* 12px 32px */
-            border-radius: 1.875rem; /* 30px */
+            padding: 0.75rem 2rem;
+            border-radius: 1.875rem;
             color: #000000;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 1rem; /* Reduced font size */
+            font-size: 1rem;
             opacity: 0.9;
             background-image: url('comingsoon.png');
             background-size: cover;
@@ -413,13 +411,6 @@
         .social-media a:hover {
             color: #11998e;
             transform: scale(1.2);
-        }
-
-        /* Centered Popular Games Section */
-        .games-grid.centered {
-            grid-template-columns: repeat(2, 1fr);
-            justify-content: center;
-            max-width: 60rem; /* 960px */
         }
 
         /* Responsiveness */
@@ -483,13 +474,13 @@
             <h2>Popular Games</h2>
             <div class="games-grid centered">
                 <a href="pacnan.html" class="game-link">
-                    <div class="game-card-large">
+                    <div class="game-card-container">
                         <img src="pacnan.png" alt="PacNan">
                         <h3>Pac-Nan</h3>
                     </div>
                 </a>
                 <a href="infinitestack.html" class="game-link">
-                    <div class="game-card-large">
+                    <div class="game-card-container">
                         <img src="infinitestack.jpg" alt="Infinite Stack">
                         <h3>Infinite Stack</h3>
                     </div>
@@ -548,7 +539,7 @@
                         <h3>The Last War</h3>
                     </div>
                 </a>
-                <a href="j4.html" class="game-link">
+                <a href="join4.html" class="game-link">
                     <div class="game-card">
                         <img src="New Project (11).jpg" alt="Join 4">
                         <h3>Join 4</h3>
@@ -586,7 +577,7 @@
 
             gamesSections.forEach(section => {
                 section.style.display = 'none'; // Hide all sections initially
-                const games = section.querySelectorAll('.game-card, .game-card-large');
+                const games = section.querySelectorAll('.game-card-container, .game-card');
                 
                 games.forEach(game => {
                     const gameName = game.querySelector('h3').textContent.toLowerCase();
