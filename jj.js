@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function createGameBoard() {
         gameBoard.innerHTML = ''; // Clear existing game board, if any
 
-        // Create a 7x6 grid for Connect Four
+        // Create a 7x6 grid for Join Four
         for (let row = 0; row < 6; row++) {
             for (let col = 0; col < 7; col++) {
                 const cell = document.createElement('div');
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Optionally add a Google event to draw attention
         gtag('event', 'Game Win', {
-            'event_category': 'Connect Four',
+            'event_category': 'Join Four',
             'event_label': `${winner} Wins`,
             'value': 1
         });
