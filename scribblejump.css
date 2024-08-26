@@ -24,7 +24,7 @@ body {
 }
 
 #board {
-    background-image: url("./doodlejumpbg.png");
+    background-image: url("./scribblejumpbg.png"); /* Updated background image */
     background-size: cover;
     border: 4px solid #38ef7d;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
