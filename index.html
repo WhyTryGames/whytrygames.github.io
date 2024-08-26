@@ -134,6 +134,7 @@
             margin: 4rem auto 1rem auto;
             padding: 0.5rem 0;
             position: relative;
+            width: 100%;
         }
 
         .search-container input[type="text"] {
@@ -340,38 +341,37 @@
         }
 
         @keyframes outlineGlow {
-    0% {
-        opacity: 0;
-        transform: scale(0.95);
-        box-shadow: 0 0 0.25rem 0 rgba(56, 239, 125, 0);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.02);
-        box-shadow: 0 0 1rem 0.5rem rgba(56, 239, 125, 0.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        box-shadow: 0 0 1.25rem 0.625rem rgba(56, 239, 125, 0.7);
-    }
-}
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+                box-shadow: 0 0 0.25rem 0 rgba(56, 239, 125, 0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.02);
+                box-shadow: 0 0 1rem 0.5rem rgba(56, 239, 125, 0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                box-shadow: 0 0 1.25rem 0.625rem rgba(56, 239, 125, 0.7);
+            }
+        }
 
-.game-link:hover .game-card-container, .game-link:hover .game-card {
-    transform: scale(1.08);
-    box-shadow: 0 1rem 2.5rem rgba(56, 239, 125, 0.5);
-    border: 0.1875rem solid #38ef7d;
-    animation: outlineGlow 0.5s ease-in-out forwards;
-}
+        .game-link:hover .game-card-container, .game-link:hover .game-card {
+            transform: scale(1.08);
+            box-shadow: 0 1rem 2.5rem rgba(56, 239, 125, 0.5);
+            border: 0.1875rem solid #38ef7d;
+            animation: outlineGlow 0.5s ease-in-out forwards;
+        }
 
-.game-link:hover .game-card-container img, .game-link:hover .game-card img {
-    transform: scale(1.05);
-}
+        .game-link:hover .game-card-container img, .game-link:hover .game-card img {
+            transform: scale(1.05);
+        }
 
-.game-link:hover .game-card-container h3, .game-link:hover .game-card h3 {
-    color: #11998e;
-}
-
+        .game-link:hover .game-card-container h3, .game-link:hover .game-card h3 {
+            color: #11998e;
+        }
 
         .coming-soon {
             position: absolute;
@@ -423,6 +423,57 @@
             transform: scale(1.2);
         }
 
+        /* Cookie Consent Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 -0.625rem 1.875rem rgba(0, 0, 0, 0.9);
+        }
+
+        .cookie-banner p {
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .cookie-banner button {
+            background-color: #38ef7d;
+            color: #0b0c10;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-banner button:hover {
+            background-color: #11998e;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner {
+                padding: 0.75rem;
+                flex-direction: column;
+            }
+
+            .cookie-banner p {
+                font-size: 0.75rem;
+            }
+
+            .cookie-banner button {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
     </style>
 </head>
 
@@ -553,6 +604,12 @@
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>This website uses cookies to ensure you get the best experience. By continuing, you accept our use of cookies.</p>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+
     <script>
         function searchGames() {
             const searchQuery = document.getElementById('searchInput').value.toLowerCase();
@@ -584,6 +641,21 @@
             document.getElementById('searchInput').value = '';
             location.reload(); // Refresh the page to reset everything
         }
+
+        function checkCookieConsent() {
+            if (!document.cookie.split('; ').find(row => row.startsWith('cookieConsent='))) {
+                document.getElementById('cookieBanner').style.display = 'flex';
+            }
+        }
+
+        function acceptCookies() {
+            document.cookie = "cookieConsent=true; path=/; max-age=" + (60*60*24*365);
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        window.onload = function() {
+            checkCookieConsent();
+        };
     </script>
 </body>
 
