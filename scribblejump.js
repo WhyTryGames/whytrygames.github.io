@@ -47,7 +47,7 @@ window.onload = function () {
 
     //load images
     doodlerRightImg = new Image();
-    doodlerRightImg.src = "./doodler-right.png";
+    doodlerRightImg.src = "./scribbler-right.png"; /* Updated image paths */
     doodler.img = doodlerRightImg;
     doodlerRightImg.onload = function () {
         context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
@@ -56,10 +56,10 @@ window.onload = function () {
     };
 
     doodlerLeftImg = new Image();
-    doodlerLeftImg.src = "./doodler-left.png";
+    doodlerLeftImg.src = "./scribbler-left.png"; /* Updated image paths */
 
     platformImg = new Image();
-    platformImg.src = "./platform.png";
+    platformImg.src = "./scribbleplatform.png"; /* Updated image paths */
 
     velocityY = initialVelocityY;
     placePlatforms();
