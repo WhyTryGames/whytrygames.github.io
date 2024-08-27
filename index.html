@@ -460,58 +460,56 @@
         }
 
         @media (max-width: 768px) {
-    /* Header */
     header {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.25rem 3%;  /* Reduce padding */
+        padding: 0.5rem 3%;  /* Increase padding for better spacing */
         height: auto;
     }
 
-    .logo-container {
-        margin-bottom: 0.25rem;  /* Reduce margin between logo and site name */
+    /* First Row: Logo on the left, Text centered but slightly to the right */
+    .logo-container,
+    .site-name {
+        display: flex;
+        width: 100%;
+        align-items: center;
     }
 
-    .logo-container img {
-        max-width: 4rem;  /* Reduce logo size */
+    .logo-container {
+        justify-content: flex-start;  /* Align logo to the left */
     }
 
     .site-name {
-        font-size: 1.25rem;  /* Reduce font size of the site name */
-        margin-bottom: 0.25rem;  /* Reduce margin below site name */
-        -webkit-text-stroke: 0.3px #ffffff;  /* Adjust stroke to match smaller font */
+        justify-content: center;  /* Center the text */
+        padding-left: 70px;  /* Slightly move the text to the right */
+        font-size: 1.5rem;  /* Adjust font size */
+        white-space: nowrap;  /* Prevent text from wrapping */
     }
 
+    /* Second Row: Navigation buttons in a row */
     nav ul {
         display: flex;
-        flex-direction: row;  /* Change to row layout */
-        justify-content: center;  /* Center the items horizontally */
-        gap: 0.5rem;  /* Add space between buttons */
-        width: 100%;
+        flex-direction: row;  /* Keep navigation items in a row */
+        justify-content: space-between;  /* Distribute buttons evenly */
+        gap: 0.5rem;  /* Space between navigation items */
+        width: 100%;  /* Ensure it spans the full width */
         padding: 0;
-        margin-top: 0.25rem;  /* Reduce margin above the navigation */
+        margin: 0;  /* Remove margin */
+        margin-top: 0.5rem;  /* Add some margin above the nav */
     }
 
     nav ul li {
-        width: auto;  /* Let the buttons size naturally */
+        flex-grow: 1;  /* Allow buttons to take equal space */
         text-align: center;
-        margin-bottom: 0;  /* Remove bottom margin */
     }
 
     nav ul li a {
-        display: block;
-        padding: 0.5rem 0.75rem;  /* Adjust padding for better fit */
+        padding: 0.5rem 0.75rem;  /* Adjust padding */
         font-size: 0.875rem;  /* Slightly smaller font size */
         border-radius: 0.5rem;  /* Adjust border radius */
     }
-
-    nav ul li a:hover {
-        background-color: #38ef7d;  /* Keep hover effect */
-        color: #0b0c10;
-    }
 }
-
-
 
 </style>
 
