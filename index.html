@@ -464,11 +464,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.5rem 3%;  /* Increase padding for better spacing */
+        padding: 0.5rem 3%;
         height: auto;
     }
 
-    /* First Row: Logo on the left, Text centered but slightly to the right */
     .logo-container,
     .site-name {
         display: flex;
@@ -477,42 +476,43 @@
     }
 
     .logo-container {
-        justify-content: flex-start;  /* Align logo to the left */
+        justify-content: flex-start;
     }
 
     .site-name {
-        justify-content: center;  /* Center the text */
-        padding-left: 50px;  /* Slightly move the text to the right */
-        font-size: 1.5rem;  /* Adjust font size */
-        white-space: nowrap;  /* Prevent text from wrapping */
+        justify-content: center;
+        padding-left: 0; /* Remove padding-left */
+        font-size: 1.5rem;
+        white-space: nowrap;
+        margin-top: 0.5rem; /* Add margin-top for spacing */
     }
 
-    /* Second Row: Navigation buttons in a row */
     nav {
-        width: 100%;  /* Ensure nav spans full width */
-        margin-top: 0.5rem;  /* Add space above the nav */
+        width: 100%;
+        margin-top: 0.5rem;
     }
 
     nav ul {
         display: flex;
-        flex-direction: row;  /* Keep navigation items in a row */
-        justify-content: center;  /* Center the navigation items */
-        gap: 0.5rem;  /* Space between navigation items */
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
         padding: 0;
-        margin: 0;  /* Remove margin */
+        margin: 0;
     }
 
     nav ul li {
-        flex-grow: 1;  /* Allow buttons to take equal space */
+        flex-grow: 1;
         text-align: center;
     }
 
     nav ul li a {
-        padding: 0.5rem 1rem;  /* Adjust padding */
-        font-size: 1rem;  /* Adjust font size */
-        border-radius: 0.5rem;  /* Adjust border radius */
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
     }
 }
+
 
 
 </style>
