@@ -160,6 +160,59 @@
             color: #11998e;
             transform: scale(1.2);
         }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 5%; /* Adjust padding for better spacing */
+                height: auto;
+            }
+
+            .logo-container {
+                visibility: hidden; /* Hide the logo but keep the space */
+                height: 0; /* Ensure no extra space is taken up */
+            }
+
+            .site-name {
+                font-size: 1.5rem;
+                text-align: center;
+                margin-bottom: 10px; /* Add space below the site name */
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 0; /* Remove top margin */
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row; /* Keep the items in one row */
+                justify-content: space-around; /* Evenly distribute the items */
+                width: 100%;
+            }
+
+            nav ul li {
+                flex-grow: 1; /* Allow the items to take up equal space */
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.2rem;
+                width: 100%; /* Ensure the link takes up full width */
+                background: rgba(255, 255, 255, 0.15);
+                transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            }
+
+            nav ul li a:hover {
+                background: rgba(56, 239, 125, 0.8);
+                color: #000000;
+                transform: scale(1.05);
+            }
+        }
     </style>
 </head>
 
@@ -170,9 +223,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="whytrygames.github.io">Home</a></li>
-                <li><a href="/aboutus.html">About Us</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
