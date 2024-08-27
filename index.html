@@ -482,21 +482,24 @@
 
     .site-name {
         justify-content: center;  /* Center the text */
-        padding-left: 70px;  /* Slightly move the text to the right */
+        padding-left: 50px;  /* Slightly move the text to the right */
         font-size: 1.5rem;  /* Adjust font size */
         white-space: nowrap;  /* Prevent text from wrapping */
     }
 
     /* Second Row: Navigation buttons in a row */
+    nav {
+        width: 100%;  /* Ensure nav spans full width */
+        margin-top: 0.5rem;  /* Add space above the nav */
+    }
+
     nav ul {
         display: flex;
         flex-direction: row;  /* Keep navigation items in a row */
-        justify-content: space-between;  /* Distribute buttons evenly */
+        justify-content: center;  /* Center the navigation items */
         gap: 0.5rem;  /* Space between navigation items */
-        width: 100%;  /* Ensure it spans the full width */
         padding: 0;
         margin: 0;  /* Remove margin */
-        margin-top: 0.5rem;  /* Add some margin above the nav */
     }
 
     nav ul li {
@@ -505,11 +508,12 @@
     }
 
     nav ul li a {
-        padding: 0.5rem 0.75rem;  /* Adjust padding */
-        font-size: 0.875rem;  /* Slightly smaller font size */
+        padding: 0.5rem 1rem;  /* Adjust padding */
+        font-size: 1rem;  /* Adjust font size */
         border-radius: 0.5rem;  /* Adjust border radius */
     }
 }
+
 
 </style>
 
