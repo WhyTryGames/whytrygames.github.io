@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <!-- Favicon -->
+    <link rel="icon" href="wt.png" type="image/png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2YMZ6EXJM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z2YMZ6EXJM', {
+            'page_title': 'Pong Game',
+            'page_path': '/pong.html'
+        });
+    </script>
+    <meta name="description" content="Play Pong online with a friend or against AI.">
+    <meta name="keywords" content="Pong, Online Game, Play Pong, Classic Game, Retro Game">
+    <meta name="author" content="Jeremy">
+    <link rel="stylesheet" href="pong.css">
+    <link rel="icon" href="wt.png" type="image/png">
+</head>
+
+<body>
+    <!-- Initial Game Mode Selection Modal -->
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <h2>Select Game Mode</h2>
+            <button id="select-friend" class="mode-button">Play with a Friend</button>
+            <button id="select-ai" class="mode-button">Play with AI</button>
+            <p id="controls-info" class="hidden">Player 1: W and S keys | Player 2: Arrow keys</p>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="game-container" class="game-container hidden">
+        <header>
+            <h1>Pong Game</h1>
+            <p id="instructions">Challenge a friend or test your skills against our AI!</p>
+        </header>
+
+        <div id="game-board">
+            <div id="ball"></div>
+            <div id="paddle-left" class="paddle"></div>
+            <div id="paddle-right" class="paddle"></div>
+        </div>
+        <div class="controls">
+            <p id="refresh-message">Refresh the page to play again.</p>
+        </div>
+    </div>
+
+    <script src="pong.js"></script>
+</body>
+
+</html>
