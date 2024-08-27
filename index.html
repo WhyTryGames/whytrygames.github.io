@@ -464,60 +464,53 @@
     header {
         flex-direction: column;
         align-items: center;
-        padding: 0.5rem 5%;
+        padding: 0.25rem 3%;  /* Reduce padding */
         height: auto;
     }
 
     .logo-container {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;  /* Reduce margin between logo and site name */
+    }
+
+    .logo-container img {
+        max-width: 4rem;  /* Reduce logo size */
     }
 
     .site-name {
-        font-size: 1.25rem;
-        position: static;
-        transform: none;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        -webkit-text-stroke: 0.5px #ffffff;
+        font-size: 1.25rem;  /* Reduce font size of the site name */
+        margin-bottom: 0.25rem;  /* Reduce margin below site name */
+        -webkit-text-stroke: 0.3px #ffffff;  /* Adjust stroke to match smaller font */
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        flex-direction: row;  /* Change to row layout */
+        justify-content: center;  /* Center the items horizontally */
+        gap: 0.5rem;  /* Add space between buttons */
         width: 100%;
         padding: 0;
-        margin-top: 0.5rem;
+        margin-top: 0.25rem;  /* Reduce margin above the navigation */
     }
 
     nav ul li {
-        width: 100%;
+        width: auto;  /* Let the buttons size naturally */
         text-align: center;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0;  /* Remove bottom margin */
     }
 
     nav ul li a {
         display: block;
-        padding: 0.5rem;
-        font-size: 0.875rem;
-        border-radius: 0.5rem;
-        width: 80%; /* Reduce width for more compact appearance */
+        padding: 0.5rem 0.75rem;  /* Adjust padding for better fit */
+        font-size: 0.875rem;  /* Slightly smaller font size */
+        border-radius: 0.5rem;  /* Adjust border radius */
     }
 
-    /* Cookie Banner */
-    .cookie-banner {
-        padding: 0.75rem;
-        flex-direction: column;
-    }
-
-    .cookie-banner p {
-        font-size: 0.75rem;
-    }
-
-    .cookie-banner button {
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
+    nav ul li a:hover {
+        background-color: #38ef7d;  /* Keep hover effect */
+        color: #0b0c10;
     }
 }
+
 
 
 </style>
